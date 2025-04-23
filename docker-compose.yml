@@ -1,0 +1,16 @@
+services:
+  node-nillion:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nillion-node
+    ports:
+      - "26656:26656"
+      - "26660:26660"
+    restart: unless-stopped
+    volumes:
+      - nillion_volume:/app
+      - ./entrypoint.sh:/app/entrypoint.sh
+
+volumes:
+  nillion_volume:
