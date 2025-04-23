@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get upgrade -y && \
-apt-get install curl git jq lz4 build-essential make -y
+apt-get install curl git jq lz4 build-essential make wget -y
 
 ENV HOME=/app \
 NODENAME="Stake Shark" \
